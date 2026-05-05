@@ -39,11 +39,12 @@ sudo autopsy
 cd /var/log 
 ls
 
-dpkg.log → package activity  
-apache2 → web server logs  
-nginx → web logs  
-journal → system logs (IMPORTANT)  
-wtmp, btmp
+//just for knowledge
+//dpkg.log → package activity  
+//apache2 → web server logs  
+//nginx → web logs  
+//journal → system logs (IMPORTANT)  
+//wtmp, btmp
 
 last
 
@@ -59,6 +60,7 @@ grep "404" /var/log/apache2/access.log
 less /var/log/dpkg.log
 sudo journalctl -f
 
+method 1
 sudo apt install openssh-server –y
 sudo service ssh start
 ip a
@@ -68,6 +70,7 @@ journalctl | grep "Failed password" | awk '{print $11}'
 journalctl | grep "Failed password" | awk '{print $11}' 
 | sort | uniq -c | sort -nr
 
+method2
 sudo lastb
 
 journalctl --since "10 minutes ago"
